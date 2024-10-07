@@ -1,0 +1,29 @@
+{
+	"version": "1.0.0",
+	"configurations": [
+		{
+			"id": "k7w2zuef599m1kyax9g972youeu5so",
+			"name": "Fluig - Produção",
+			"host": "combioenergia.fluig.cloudtotvs.com.br",
+			"ssl": true,
+			"port": 443,
+			"username": "rafael.araujo",
+			"password": "***REMOVED***",
+			"userCode": "rafael.araujo",
+			"confirmExporting": false,
+			"companyId": 1
+		},
+		{
+			"id": "yk4wa2trcwom1pegcfm2n4mfddlkrw",
+			"name": "Fluig Producao",
+			"host": "combioenergia.fluig.cloudtotvs.com.br",
+			"ssl": true,
+			"port": 443,
+			"username": "rafael.araujo",
+			"password": "***REMOVED***",
+			"userCode": "rafael.araujo",
+			"confirmExporting": true,
+			"companyId": 1
+		}
+	]
+}

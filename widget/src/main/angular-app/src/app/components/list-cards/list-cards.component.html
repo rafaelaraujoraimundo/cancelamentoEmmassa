@@ -1,0 +1,103 @@
+<po-page-default>
+  <div class="po-row">
+    <div class="po-mt-2 po-md-12 po-sm-12 po-text-center green-background">
+      <font class="po-font-title"
+        >Painel de Transferencia de Usuarios - Combio</font
+      >
+    </div>
+    <div
+      class="po-offset-lg-11 po-offset-xl-11 po-xl-4 po-lg-4 po-md-6 po-sm-12"
+    >
+      <po-tag p-value="Versão 1.6"> </po-tag>
+    </div>
+  </div>
+  <div class="po-mt-2"></div>
+  <form [formGroup]="form!">
+    <po-container>
+    <div class="po-row po-mb-2 ">
+      <font class="po-font-text-large-bold">Seleção de Usuários</font>
+    </div>
+    <div class="po-row">
+      <div class="po-ml-4 po-mr-5 po-xl-4 po-lg-4 po-md-12 po-sm-12">
+        <po-combo
+          class=""
+          name="city"
+          p-icon="ph ph-user-check"
+          p-label="Usuario Base"
+          p-placeholder="Selecione o Usuario Base"
+          formControlName="usuarioBase"
+          [p-options]="items"
+        >
+          <ng-template p-combo-option-template let-option>
+            <div class="po-row">
+              <po-avatar
+                class="po-sm-2 po-md-1 po-lg-1"
+                p-size="sm"
+              ></po-avatar>
+
+              <div class="po-sm-10 po-md-9 po-lg-11">
+                <div class="po-font-text-large-bold">{{ option.label }}</div>
+                <div class="po-font-text-smaller">
+                  Usuario: {{ option.value }}
+                </div>
+              </div>
+            </div>
+          </ng-template>
+        </po-combo>
+      </div>
+      <div class="po-md-1 po-sm-12 po-mt-4">
+        <po-button
+          p-label="Executar"
+          p-type="submit"
+          (p-click)="onSubmit()"
+          [p-disabled]="form!.invalid"
+        ></po-button>
+      </div>
+     
+    </div>
+  </po-container>
+
+ 
+
+
+  <div class="po-mt-2">
+  <po-container>
+    <div class="Po-row">
+      <font class="po-font-text-large-bold">Processos do Usuario</font>
+    </div>
+    <div class="po-row">
+      <div class="po-md-1 po-sm-12 po-mt-4">
+        <po-button
+          p-label="Cancelamento em Bloco"
+         (p-click)="confirmCancel()"
+          [p-disabled]="bButtonCancel"
+        ></po-button>
+      </div>
+  </div>
+    <div class="Po-row">
+    <po-table
+  [p-columns]="columns"
+  [p-items]="tasks"
+  [p-selectable]="true"
+  (p-selected)="onSelectionChange($event)"
+  (p-all-selected)="onSelectionAll($event)"
+  (p-all-unselected)="onUnSelectionAll()"
+  (p-unselected)="onUnSelectionChange($event)">
+</po-table>
+</div>
+  </po-container>
+</div>
+
+    
+  </form>
+</po-page-default>
+<po-modal #modal p-size="lg" p-title="Log de execução"> 
+  <p><strong>Total de Processos Cancelados:</strong>{{ this.nCountSucess }} <p>
+    <p><strong>Total de Processos com erro:</strong>{{ this.nCountError }} <p>
+
+  <div *ngFor="let result of cancelResults">
+  <!-- Exibe processInstanceId e message -->
+  <p><strong>Process Instance ID:</strong> {{ result.processInstanceId }} <po-tag *ngIf="result.status === 'SUCCESS'"  [p-type]="sucess" p-value="Sucesso"> </po-tag><po-tag *ngIf="result.status === 'ERROR'"  [p-type]="danger" p-value="Error"></po-tag></p>
+  <div *ngIf="result.status === 'ERROR'"> <p ><strong>Message:</strong> {{ result.message }}</p></div>
+  <hr/>
+</div> </po-modal>
