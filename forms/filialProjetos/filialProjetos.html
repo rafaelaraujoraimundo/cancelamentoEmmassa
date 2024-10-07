@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Filial de Projetos</title>
+    <!-- Inclua o jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- Link para o arquivo JavaScript separado -->
+    <script src="form-filial.js" defer></script>
+</head>
+<body>
+    <h1>Formulário de Filial</h1>
+    <form id="formFilial">
+        <label for="codigoFilial">Código Filial:</label>
+        <select id="codigoFilial" name="codigoFilial">
+            <!-- Opções serão preenchidas dinamicamente -->
+        </select><br><br>
+
+        <label for="dataCriacao">Data de Criação:</label>
+        <input type="date" id="dataCriacao" name="dataCriacao"><br><br>
+
+        <label for="usuarioCriacao">Usuário de Criação:</label>
+        <input type="text" id="usuarioCriacao" name="usuarioCriacao"><br><br>
+
+        <label for="dataAlteracao">Data de Alteração:</label>
+        <input type="date" id="dataAlteracao" name="dataAlteracao"><br><br>
+
+        <label for="usuarioAlteracao">Usuário de Alteração:</label>
+        <input type="text" id="usuarioAlteracao" name="usuarioAlteracao"><br><br>
+
+        <label for="ativoInativo">Ativo/Inativo:</label>
+        <input type="checkbox" id="ativoInativo" name="ativoInativo"><br><br>
+
+        <label for="valorFilial">Valor da Filial:</label>
+        <input type="number" id="valorFilial" name="valorFilial"><br><br>
+
+        <button type="submit">Salvar</button>
+    </form>
+</body>
+</html>
