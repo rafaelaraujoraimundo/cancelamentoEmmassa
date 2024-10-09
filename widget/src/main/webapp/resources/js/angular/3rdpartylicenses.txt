@@ -315,7 +315,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 
 --------------------------------------------------------------------------------
-Package: @totvs/po-theme
+Package: @rafaelaraujo/combio-theme
 License: "MIT"
 
 
