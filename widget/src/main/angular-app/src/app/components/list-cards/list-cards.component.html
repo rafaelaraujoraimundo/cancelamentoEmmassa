@@ -2,13 +2,13 @@
   <div class="po-row">
     <div class="po-mt-2 po-md-12 po-sm-12 po-text-center green-background">
       <font class="po-font-title"
-        >Painel de Transferencia de Usuarios - Combio</font
+        >Painel de cancelamento em massa de Processos - Combio</font
       >
     </div>
     <div
-      class="po-offset-lg-11 po-offset-xl-11 po-xl-4 po-lg-4 po-md-6 po-sm-12"
+      class="po-mt-2 po-mb-2 po-offset-lg-11 po-offset-xl-11 po-xl-4 po-lg-4 po-md-6 po-sm-12"
     >
-      <po-tag p-value="Versão 1.6"> </po-tag>
+      <po-tag p-value="Versão 1.2"> </po-tag>
     </div>
   </div>
   <div class="po-mt-2"></div>
@@ -92,8 +92,14 @@
   </form>
 </po-page-default>
 <po-modal #modal p-size="lg" p-title="Log de execução"> 
-  <p><strong>Total de Processos Cancelados:</strong>{{ this.nCountSucess }} <p>
-    <p><strong>Total de Processos com erro:</strong>{{ this.nCountError }} <p>
+  <div class="po-row po-mb-5"> 
+  <div class="po-ml-4 po-mr-5 po-xl-4 po-lg-4 po-md-12 po-sm-12">
+  <p><strong>Total de Processos Cancelados:</strong>{{ this.nCountSucess }} <p>  
+  </div>
+  <div class="po-ml-4 po-mr-5 po-xl-4 po-lg-4 po-md-12 po-sm-12">
+  <p><strong>Total de Processos com erro:</strong>{{ this.nCountError }} <p>
+  </div>
+</div>
 
   <div *ngFor="let result of cancelResults">
   <!-- Exibe processInstanceId e message -->
